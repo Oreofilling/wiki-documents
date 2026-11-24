@@ -75,6 +75,11 @@ const LATEST_DOCS = [
         title: <Translate id="home.latest.toolstack">AI ToolStack：模型部署</Translate>,
         url: LINKS.software.aiToolStack,
     },
+    {
+        badge: <Translate id="home.latest.badge.platform">平台</Translate>,
+        title: <Translate id="home.latest.neolinker">NeoLinker：设备配网工具</Translate>,
+        url: LINKS.latest.neolinker,
+    },
 ];
 
 export default function Home(): JSX.Element {
@@ -250,6 +255,28 @@ export default function Home(): JSX.Element {
                                     <Translate id="home.software.toolstack.desc">训练、优化模型，并部署到边缘设备。</Translate>
                                 </p>
                                 <Link to={LINKS.software.aiToolStack}>
+                                    <Translate id="home.software.viewDocs">查看文档</Translate>
+                                    <span aria-hidden="true"> →</span>
+                                </Link>
+                            </div>
+                        </article>
+
+                        {/* TODO(image): 临时占位图，后续替换为 NeoLinker 真实界面截图（1200×600） */}
+                        <article className="software-card">
+                            <img
+                                className="dashboard-shot"
+                                src="/img/home/neolinker-banner.png"
+                                alt="NeoLinker"
+                                loading="lazy"
+                                width={1200}
+                                height={600}
+                            />
+                            <div>
+                                <h2>NeoLinker</h2>
+                                <p>
+                                    <Translate id="home.software.neolinker.desc">NE 系列相机配网工具：三路发现、向导式配置、回执留痕。</Translate>
+                                </p>
+                                <Link to={LINKS.software.neolinker}>
                                     <Translate id="home.software.viewDocs">查看文档</Translate>
                                     <span aria-hidden="true"> →</span>
                                 </Link>
