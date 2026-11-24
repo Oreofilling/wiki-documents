@@ -15,20 +15,20 @@ NeoLinker 是免安装的绿色软件：解压即用。运行环境的要求集�
 2. 解压到任意有写权限的目录；
 3. 双击 `NeoLinker.exe` 运行。
 
-无需管理员权限，不写注册表，卸载即删除目录。
+以普通权限即可运行；但 **softAP 通道的热点枚举需要管理员权限**——未提权时该通道自动降级（BLE / LAN 通道不受影响）。卸载即删除目录。
 
 ## 系统要求
 
 | 项目 | 要求 | 说明 |
 | ---- | ---- | ---- |
-| 操作系统 | Windows 10/11 x64 | macOS 支持规划中 |
-| 运行时 | WebView2 Evergreen | Windows 11 及多数已更新的 Windows 10 自带；NE503 内嵌管理台依赖它 |
+| 操作系统 | Windows 10/11 x64 | 暂无其他平台计划公布 |
+| 运行时 | WebView2 Evergreen | Windows 11 及多数已更新的 Windows 10 自带；NE503 内嵌管理页依赖它 |
 | 蓝牙 | 支持 BLE 的蓝牙适配器 | 仅 BLE 通道需要；softAP / LAN 通道不需要 |
 | 网络 | WLAN 网卡 / 以太网 | softAP 通道用 WLAN；LAN 通道（CT-Disc）用以太网或同网段 WLAN |
 
 ## WebView2 Evergreen 运行时
 
-应用内嵌浏览器（NE503 设备管理台）基于 WebView2。若启动或打开管理台时提示缺少运行时：
+应用内嵌浏览器（NE503 设备管理页）基于 WebView2。若启动或打开管理页时提示缺少运行时：
 
 1. 打开 [WebView2 下载页](https://developer.microsoft.com/microsoft-edge/webview2/)；
 2. 下载 **Evergreen Standalone** 安装包（x64）并安装；

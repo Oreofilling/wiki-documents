@@ -1,5 +1,5 @@
 ---
-description: Discovering devices with NeoLinker — the three channels (BLE advertisement scan, softAP SSID scan, LAN CT-Disc), model and channel filters, QR-code entry, and the embedded NE503 management console.
+description: Discovering devices with NeoLinker — the three channels (BLE advertisement scan, softAP SSID scan, LAN CT-Disc), model and channel filters, QR-code entry, and the embedded NE503 management page.
 keywords: [NeoLinker, device discovery, BLE scan, softAP, CT-Disc, QR entry, RSSI]
 tags: [NeoLinker, Device Discovery]
 ---
@@ -20,11 +20,12 @@ A device in configuration mode advertises itself over BLE (model code, address s
 
 - **Signal strength (RSSI)** helps you judge distance — closer is more stable;
 - The **BUSY / provisionable flags** from the advertisement are reflected in the list state (a device being configured elsewhere shows busy);
-- Devices fade out after going offline, keeping their **last-seen** time.
+- Devices fade out after going offline, keeping their **last-seen** time;
+- Mind the **configuration window**: a device stays configurable for about 60 s after power-on (LED flashing blue) and auto-sleeps after ~1 minute idle — press the config button to wake it and retry.
 
 ## softAP SSID scan
 
-In configuration mode a device opens a hotspot with an SSID convention of `CT-AP-<address suffix>`. NeoLinker scans the WLAN for such SSIDs and lists them. After picking a device, follow the app's guidance to switch the PC's Wi-Fi to the device hotspot; the provisioning session then runs with the same semantics as BLE (CT-Prov over HTTP).
+In configuration mode a device opens a hotspot: the target SSID convention is `CT-AP-<address suffix>`, while current NE101 firmware still uses the legacy `<MODEL>_<MAC suffix>` (e.g. `NE101-P_BBC6DC`) — recognize both prefixes. NeoLinker scans the WLAN for such SSIDs and lists them. After picking a device, **the app joins the device hotspot itself** (your current Wi-Fi drops meanwhile and is restored afterwards); the provisioning session then runs with the same semantics as BLE (CT-Prov over HTTP).
 
 Default softAP addresses by model:
 
@@ -32,11 +33,11 @@ Default softAP addresses by model:
 | ------ | ------ |
 | NE101 | `192.168.1.1` |
 | NE301 | `192.168.10.10` |
-| NE503 | `10.0.0.1` (normally used via the LAN channel) |
+| NE503 | `10.0.0.1` (protocol-reserved; NeoLinker does not support NE503 over softAP) |
 
 ## LAN discovery (CT-Disc)
 
-Once an NE503 is on the network, it multicasts `ct-announce` (serial number, IP, port, capabilities) every few seconds. As long as the PC is on the **same subnet**, the LAN channel lists it. From there you can start a provisioning session or open the device's management console inside the app.
+Once an NE503 is on the network, it multicasts `ct-announce` (serial number, IP, port, capabilities) every few seconds. As long as the PC is on the **same subnet**, the LAN channel lists it. From there you can open the device's management page inside the app (no provisioning session for NE503 yet).
 
 ## Filters and QR entry
 
@@ -45,9 +46,9 @@ Once an NE503 is on the network, it multicasts `ct-announce` (serial number, IP,
 
 <img src="/img/neolinker/placeholders/scan-en.png" alt="Scan page — filters + device list (placeholder — to be replaced)" />
 
-## Embedded NE503 console
+## Embedded NE503 management page
 
-For an NE503 discovered over LAN, the list offers **Open console**: the device's management page opens inside the app (WebView2) — no browser, no typing IP addresses.
+For an NE503 discovered over LAN, the list offers **Open management page**: it opens inside the app (WebView2) — no browser, no typing IP addresses.
 
 ---
 

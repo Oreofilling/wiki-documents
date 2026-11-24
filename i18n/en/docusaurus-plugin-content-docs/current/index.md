@@ -42,16 +42,16 @@ import VideoCarousel from '@site/src/components/VideoCarousel';
       <p>Open-source firmware, SDKs, schematics and datasheets — downloadable per product.</p>
       <span className="step-link">Get the resources →</span>
     </a>
-    <a href="/docs/neomind/quick-start/five-minute-guide" className="build-step">
+    <Link to="/docs/neomind/quick-start/five-minute-guide" className="build-step">
       <h3>NeoMind</h3>
       <p>Install the platform, onboard devices, run local inference and integrate your business.</p>
       <span className="step-link">NeoMind in 5 minutes →</span>
-    </a>
-    <a href="/docs/neolinker/quick-start" className="build-step">
+    </Link>
+    <Link to="/docs/neolinker/quick-start" className="build-step">
       <h3>Device Provisioning</h3>
       <p>Provision NE-series cameras with the NeoLinker desktop tool: QR entry, capability-driven forms, per-device receipts.</p>
       <span className="step-link">NeoLinker quick start →</span>
-    </a>
+    </Link>
   </div>
 
   {/* ================= Edge AI Solutions ================= */}

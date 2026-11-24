@@ -10,7 +10,7 @@ Selecting a device in the list starts a **phase-driven provisioning session**:
 
 ```mermaid
 flowchart LR
-    A["Connect"] --> B["Read capabilities"] --> C["Configure per module"] --> D["Deliver"] --> E["Result receipt"]
+    A["Connect"] --> B["Read capabilities"] --> C["Fill in config"] --> D["Deliver"] --> E["Result receipt"]
 ```
 
 One screen per phase. If the link drops unexpectedly, the app detects it and **reconnects in place** — the session resumes where it left off, and late duplicate results are dropped idempotently.
@@ -18,7 +18,7 @@ One screen per phase. If the link drops unexpectedly, the app detects it and **r
 ## 1. Connect and pair
 
 - **BLE channel**: the link is encrypted. Confirm the Windows pairing prompt when it appears — the bond it creates is the basis of link-layer encryption;
-- **softAP channel**: follow the app's guidance to switch the PC's Wi-Fi to the device hotspot (`CT-AP-<address suffix>`);
+- **softAP channel**: the app joins the device hotspot itself (current NE101 hotspots are mostly named `<MODEL>_<MAC suffix>`, e.g. `NE101-P_BBC6DC`);
 - **LAN channel (NE503)**: same subnet, direct connection.
 
 Once connected, the app first reads **device info** (model, serial number, …), then the **capability report**.
@@ -36,9 +36,9 @@ CT-Prov/1 defines seven config sections. Which ones appear depends on the device
 | `wifi` | Wi-Fi access: SSID, password (can trigger a device-side scan to pick a network) | NE101 / NE301 |
 | `cellular` | Cellular (CAT1) dial-up: APN, etc. | NE101 / NE301 |
 | `halow` | Wi-Fi HaLow low-power long-range access | module-dependent |
-| `ethernet` | Ethernet port configuration | model-dependent |
-| `comm` | Network selector: which uplink to prefer | NE101 / NE301 |
-| `mqtt` | MQTT service: broker address, port, topics, etc. | NE101 / NE301 / NE503 |
+| `ethernet` | Ethernet / PoE: nothing to configure — plug and play (DHCP), read-only display | model-dependent |
+| `comm` | Network selector: which uplink to prefer | NE301 only (NE101 auto-probes in firmware; the section never appears) |
+| `mqtt` | MQTT service: broker address, port, topics, etc. | NE101 / NE301 |
 | `webhook` | Webhook push: URL, events, etc. | NE101 / NE301 |
 
 Common form behavior:
@@ -51,7 +51,7 @@ Common form behavior:
 
 ## 4. Deliver
 
-Click **Deliver** and the app writes the selected sections to the device, module by module. Delivery semantics worth knowing:
+Click **Deliver** and the app sends all filled sections in **one atomic request** — if any section fails validation the whole request is rejected and nothing is written. Delivery semantics worth knowing:
 
 - **Whole-section overwrite** — each section is overwritten from this session's form; it is idempotent: delivering the same content twice has the same result;
 - **Success means persisted** — a success response means the configuration is in non-volatile storage and survives reboot;

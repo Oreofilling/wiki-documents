@@ -42,16 +42,16 @@ import VideoCarousel from '@site/src/components/VideoCarousel';
       <p>开源固件、SDK、原理图与数据表，按产品直接下载。</p>
       <span className="step-link">获取开源资源 →</span>
     </a>
-    <a href="/docs/neomind/quick-start/five-minute-guide" className="build-step">
+    <Link to="/docs/neomind/quick-start/five-minute-guide" className="build-step">
       <h3>NeoMind</h3>
       <p>安装平台、接入设备、本地识别，并把数据对接到业务系统。</p>
       <span className="step-link">NeoMind 五分钟入门 →</span>
-    </a>
-    <a href="/docs/neolinker/quick-start" className="build-step">
+    </Link>
+    <Link to="/docs/neolinker/quick-start" className="build-step">
       <h3>设备配网</h3>
-      <p>用 NeoLinker 桌面工具给 NE 系列相机配网：扫码即连、能力驱动表单、回执留痕。</p>
+      <p>用 NeoLinker 桌面工具给 NE 系列相机配网：扫码添加设备、能力驱动表单、回执留痕。</p>
       <span className="step-link">NeoLinker 快速上手 →</span>
-    </a>
+    </Link>
   </div>
 
   {/* ================= Edge AI Solutions ================= */}

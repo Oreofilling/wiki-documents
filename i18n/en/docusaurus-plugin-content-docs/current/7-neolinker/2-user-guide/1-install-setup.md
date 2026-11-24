@@ -14,20 +14,20 @@ NeoLinker is a portable app: unzip and run. The environment requirements boil do
 2. Unzip it to any writable folder;
 3. Double-click `NeoLinker.exe`.
 
-No administrator rights, no registry entries — uninstall by deleting the folder.
+Runs with normal user rights, but **the softAP channel's hotspot enumeration needs administrator rights** — without elevation that channel degrades automatically (BLE / LAN are unaffected). Uninstall by deleting the folder.
 
 ## System requirements
 
 | Item | Requirement | Notes |
 | ---- | ---- | ---- |
-| OS | Windows 10/11 x64 | macOS support planned |
-| Runtime | WebView2 Evergreen | Preinstalled on Windows 11 and most updated Windows 10; the embedded NE503 console depends on it |
+| OS | Windows 10/11 x64 | No other platform plans announced |
+| Runtime | WebView2 Evergreen | Preinstalled on Windows 11 and most updated Windows 10; the embedded NE503 management page depends on it |
 | Bluetooth | A BLE-capable Bluetooth adapter | Only needed for the BLE channel; softAP / LAN work without it |
 | Network | WLAN adapter / Ethernet | The softAP channel uses WLAN; the LAN channel (CT-Disc) uses Ethernet or same-subnet WLAN |
 
 ## WebView2 Evergreen runtime
 
-The embedded browser (the NE503 management console) is based on WebView2. If the app complains about a missing runtime at startup or when opening the console:
+The embedded browser (the NE503 management page) is based on WebView2. If the app complains about a missing runtime at startup or when opening the page:
 
 1. Open the [WebView2 download page](https://developer.microsoft.com/microsoft-edge/webview2/);
 2. Download the **Evergreen Standalone** installer (x64) and run it;

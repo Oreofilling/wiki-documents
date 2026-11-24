@@ -1,5 +1,5 @@
 ---
-description: NeoLinker receipts and history — every completed session writes a plain-text per-device receipt (applied-at times, stored counts) that can be exported; past sessions are listed and browsable, and the result page loops straight to the next device.
+description: NeoLinker receipts and history — every completed session writes a plain-text per-device receipt (stored sections, a stored count, and the completion time) that can be exported; past sessions are listed and browsable, and the result page loops straight to the next device.
 keywords: [NeoLinker, receipts, history, export, production line, provisioning records]
 tags: [NeoLinker, Receipts & History]
 ---
@@ -13,8 +13,8 @@ NeoLinker treats "what was configured, and when" as a first-class concern: **eve
 After a successful delivery, the result page shows the session's **plain-text receipt**, organized per device, including:
 
 - Device identity (model / serial number, …);
-- The config sections written in this session;
-- Per-section applied-at times and stored counts.
+- The list of config sections written in this session and the stored count;
+- The session completion time.
 
 <img src="/img/neolinker/placeholders/receipt-en.png" alt="Result page receipt card (placeholder — to be replaced)" />
 
@@ -22,10 +22,10 @@ The receipt can be **exported** directly for archiving — a plain-text format t
 
 ## Session history
 
-The **History** page in the sidebar lists past sessions with details and export. On a production line, "what was configured on this unit back then" is one serial-number lookup away.
+The **History** page in the sidebar lists past sessions with details and export. During a run, "what was configured on this unit" is one serial-number lookup away.
 
-:::tip History is organized per run
-The history list focuses on the current batch of provisioning; switch runs to look further back.
+:::tip History lives for this launch only
+The history list holds only sessions from the current launch and is cleared when the app closes; export receipts per session for durable records.
 :::
 
 ## The production-line loop

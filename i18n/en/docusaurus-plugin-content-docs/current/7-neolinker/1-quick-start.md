@@ -2,6 +2,7 @@
 description: "Get NeoLinker running in 5 minutes: download & unzip → self-check → scan → connect → configure Wi-Fi → deliver and check the receipt. NE101 over BLE as the main path, with checkpoints and troubleshooting tips."
 keywords: [NeoLinker, quick start, 5 minutes, BLE provisioning, Wi-Fi config, NE101, device discovery]
 tags: [NeoLinker, Quick Start]
+sidebar_label: "Quick Start"
 ---
 
 # 5-Minute Quick Start
@@ -12,7 +13,7 @@ Take one NE101 from configuration mode to a finished receipt over the **BLE chan
 
 - A Windows 10/11 x64 PC with a Bluetooth adapter (required for BLE)
 - One NE101 camera in configuration mode (see the material shipped with the device)
-- A 2.4 GHz Wi-Fi router (the camera and the PC do not need to be on the same network)
+- A Wi-Fi router (the camera and the PC do not need to be on the same network; if the device only supports the 2.4 GHz band, follow its manual)
 
 ---
 
@@ -24,7 +25,9 @@ Download the latest `NeoLinker_v*_windows_x64.zip` from [GitHub Releases](https:
 
 ✓ **Checkpoint**: the app opens in English or 中文 (switch language and light/dark theme in the top-right corner).
 
-> Tip: if the app or the NE503 console complains about a missing WebView2, install the [WebView2 Evergreen runtime](https://developer.microsoft.com/microsoft-edge/webview2/) and retry.
+:::tip WebView2
+If the app or the NE503 management page complains about a missing WebView2, install the [WebView2 Evergreen runtime](https://developer.microsoft.com/microsoft-edge/webview2/) and retry.
+:::
 
 ## 2. Self-check
 
@@ -32,7 +35,9 @@ The app opens on the **self-check page**, which checks each transport — BLE ad
 
 ✓ **Checkpoint**: the BLE row shows green / ready.
 
-> Troubleshoot: if BLE is unavailable, make sure system Bluetooth is on and the adapter driver is healthy; on a desktop PC, use a USB Bluetooth adapter. Details in [Install & Setup](./2-user-guide/1-install-setup.md).
+:::tip BLE unavailable
+Make sure system Bluetooth is on and the adapter driver is healthy; on a desktop PC, use a USB Bluetooth adapter. Details in [Install & Setup](./2-user-guide/1-install-setup.md).
+:::
 
 ## 3. Scan for devices
 
@@ -45,7 +50,9 @@ On the **scan page** the app scans all three channels (BLE advertisements / soft
 
 ✓ **Checkpoint**: your NE101 shows up (BLE channel) with a reasonable signal.
 
-> Troubleshoot: if nothing appears, confirm the device is really in configuration mode and not too far away; see [Discover Devices](./2-user-guide/2-discover-devices.md).
+:::tip Nothing appears
+Confirm the device is really in configuration mode (within ~60 s of power-on, LED flashing blue) and not too far away; the device auto-sleeps after ~1 minute of inactivity — press the config button to wake it and retry. See [Discover Devices](./2-user-guide/2-discover-devices.md).
+:::
 
 ## 4. Connect
 
@@ -53,7 +60,9 @@ Select the device in the list and click **Connect**. The BLE channel uses an enc
 
 ✓ **Checkpoint**: the connect page shows device info (model / serial number, …) and moves on to capability readout.
 
-> Troubleshoot: on pairing failure or timeout, go back to the scan page and retry; repeated failures → [Troubleshooting](./2-user-guide/5-troubleshooting.md).
+:::tip Pairing failure or timeout
+Go back to the scan page and retry; repeated failures → [Troubleshooting](./2-user-guide/5-troubleshooting.md).
+:::
 
 ## 5. Configure Wi-Fi
 
@@ -71,17 +80,19 @@ Sections the device does not support simply do not appear — forms are generate
 
 ## 6. Deliver and check the receipt
 
-Click **Deliver**. The device writes and persists the configuration; on success the app moves to the **result page** with the session receipt — per-section applied-at times and stored counts.
+Click **Deliver**. The device writes and persists the configuration; on success the app moves to the **result page** with the session receipt — the stored sections, a stored count, and the session completion time.
 
 ✓ **Checkpoint**: the result page shows a successful delivery whose receipt matches what you entered.
 
-> Note: a successful delivery means the configuration is persisted on the device. The device then connects to Wi-Fi on its own; the runtime outcome is surfaced by device logs or the platform side, outside this tool's feedback scope.
+:::note Delivered ≠ online
+A successful delivery means the configuration is persisted on the device. The device then connects to Wi-Fi on its own; the runtime outcome is surfaced by device logs or the platform side, outside this tool's feedback scope.
+:::
 
 ## 7. Wrap up
 
 - Click **Configure next device** to return to the scan page (production-line loop);
 - Or open the **History** page to browse / export past sessions;
-- NE503 users: after LAN discovery, the device's management console opens inside the app (WebView2).
+- NE503 users: after LAN discovery, the device's management page opens inside the app (WebView2).
 
 ---
 

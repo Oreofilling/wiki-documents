@@ -16,6 +16,7 @@ Work through the scenarios below. If nothing helps, open an issue in the [NeoLin
 - Confirm the self-check page shows **BLE ready**: system Bluetooth on, adapter driver healthy; on desktop PCs use a USB Bluetooth adapter;
 - **Move closer** — broadcasts may not be received at very low RSSI;
 - Make sure no other host is configuring the device (a device broadcasting its BUSY flag is hard to spot);
+- Mind the **configuration window**: a device stays configurable for about 60 s after power-on (LED flashing blue) and auto-sleeps after ~1 minute idle — press the config button to wake it and retry;
 - Cross-check with another device to isolate whether it is the device or the PC.
 
 ## Bluetooth pairing fails / connect times out
@@ -31,10 +32,10 @@ Work through the scenarios below. If nothing helps, open an issue in the [NeoLin
 
 **Symptom**: the SSID is visible on the softAP channel, but the connection / session fails.
 
-- Confirm the PC's Wi-Fi has switched to the device hotspot `CT-AP-<address suffix>` as the app guides;
-- Some adapters hold on to the previous Wi-Fi — **disconnect other Wi-Fi networks** during provisioning;
+- The app joins the device hotspot itself (current NE101 hotspots are mostly named `<MODEL>_<MAC suffix>`, e.g. `NE101-P_BBC6DC`); your current Wi-Fi drops meanwhile and is restored afterwards;
+- If joining fails, manually disconnect the PC's other Wi-Fi networks and retry;
 - If you access the device manually, see the address table in [Discover Devices](./2-discover-devices.md);
-- The device hotspot has a client limit: make sure nothing else is holding the link.
+- A device serves one configuration connection at a time — if another host is configuring it, the device reports BUSY; wait and retry.
 
 ## Delivery fails (error codes)
 
@@ -49,7 +50,7 @@ Check against the error-code table in [Provision a Device](./3-provision-device.
 
 ## Missing WebView2
 
-**Symptom**: a WebView2 prompt at startup or when opening the NE503 console.
+**Symptom**: a WebView2 prompt at startup or when opening the NE503 management page.
 
 Install the [WebView2 Evergreen runtime](https://developer.microsoft.com/microsoft-edge/webview2/) (x64) and restart the app. See [Install & Setup](./1-install-setup.md).
 
@@ -66,7 +67,7 @@ Install the [WebView2 Evergreen runtime](https://developer.microsoft.com/microso
 
 That is not a tool fault: NeoLinker only **writes and persists** the configuration; it does not verify runtime connectivity. Check:
 
-- SSID and password (2.4 GHz vs 5 GHz);
+- SSID and password (if the device only supports 2.4 GHz, make sure the router has that band enabled — follow the device manual);
 - The device-side logs or local page for association status;
 - Router-side MAC filtering / allow-lists.
 
