@@ -47,6 +47,11 @@ import VideoCarousel from '@site/src/components/VideoCarousel';
       <p>Install the platform, onboard devices, run local inference and integrate your business.</p>
       <span className="step-link">NeoMind in 5 minutes →</span>
     </a>
+    <a href="/docs/neolinker/quick-start" className="build-step">
+      <h3>Device Provisioning</h3>
+      <p>Provision NE-series cameras with the NeoLinker desktop tool: QR entry, capability-driven forms, per-device receipts.</p>
+      <span className="step-link">NeoLinker quick start →</span>
+    </a>
   </div>
 
   {/* ================= Edge AI Solutions ================= */}
@@ -244,6 +249,12 @@ import VideoCarousel from '@site/src/components/VideoCarousel';
       <a href="https://github.com/camthink-ai/NeoMind-Extensions" target="_blank" rel="noopener noreferrer" className="oss-link"><span className="repo">NeoMind-Extensions</span><span className="repo-desc">official extensions</span></a>
       </div>
     </div>
+    <div className="oss-card">
+      <h3>NeoLinker <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></h3>
+      <div className="oss-links">
+      <a href="https://github.com/camthink-ai/NeoLinker" target="_blank" rel="noopener noreferrer" className="oss-link"><span className="repo">NeoLinker</span><span className="repo-desc">desktop provisioning tool</span></a>
+      </div>
+    </div>
   </div>
 
   {/* ================= Software Platforms ================= */}
@@ -275,11 +286,29 @@ import VideoCarousel from '@site/src/components/VideoCarousel';
         </div>
       </div>
     </Link>
+    <Link to="/docs/neolinker/overview" className="platform-card">
+      <img src="/img/home/neolinker.png" alt="NeoLinker" />
+      <div>
+        <h3>NeoLinker Provisioning Tool</h3>
+        <p>A Windows desktop tool: discover NE-series cameras over BLE / softAP / LAN, provision them wizard-style, and keep exportable per-device receipts.</p>
+        <div className="chip-row">
+          <span className="chip">Multi-channel discovery</span>
+          <span className="chip">Capability-driven forms</span>
+          <span className="chip">Receipt export</span>
+          <span className="chip">Bilingual UI</span>
+        </div>
+      </div>
+    </Link>
   </div>
 
   {/* ================= Latest Updates ================= */}
   <h2 className="docs-section-title">Latest Docs</h2>
   <div className="latest-docs-grid">
+    <Link to="/docs/neolinker/overview" className="update-card">
+      <span className="update-badge">NEW</span>
+      <div className="update-title">NeoLinker Provisioning Tool</div>
+      <div className="update-meta"><span>Software Platform</span></div>
+    </Link>
     <Link to="/docs/edge-ai-solutions/people-counting/solution-description" className="update-card">
       <span className="update-badge">NEW</span>
       <div className="update-title">People Counting Solution</div>

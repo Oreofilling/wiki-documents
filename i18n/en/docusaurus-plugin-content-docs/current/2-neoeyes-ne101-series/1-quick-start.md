@@ -132,7 +132,12 @@ If you enter the device configuration page, let's take a look at how to modify t
 
 
 **Internet Connection**
->The network connection settings of NE101 vary according to the selected communication modules. There are mainly 3 communication methods that can be set: **Wi-Fi, Cat.1, and Wi-Fi Halow**. User can refer to the details below for communication settings.
+>The network connection settings of NE101 vary according to the selected communication modules. There are mainly 3 communication methods that can be set: **Wi-Fi, Cat.1, and WiFi Halow**. User can refer to the details below for communication settings.
+
+:::tip Provision with the NeoLinker desktop tool
+Besides the device's own Wi-Fi AP web page, you can do the same network and comm-module configuration on a Windows PC with [NeoLinker](/docs/neolinker/overview) over **BLE / softAP** — with QR entry, model filtering, and exportable per-device receipts for production-line batches.
+:::
+
 - **Wi-Fi Settings**: The standard version of NE101 embedded with a Wi-Fi module. In the Wi-Fi version, user can search the Wi-Fi signals within the current range in the configuration interface. User can select settings according to the Wi-Fi that want to connect to. The device will automatically record the SSID and password of the Wi-Fi. If the Wi-Fi connected to NE101 is set repeatedly, the SSID and password stored by the device will always be the most recent one.
 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
   <img src="https://resources.camthink.ai/wiki/img/neoeyes-ne101-series/quick-start/ne101_13.png" alt="bracket" style={{ height: '400px', objectFit: 'contain', margin: '0 auto' }} />

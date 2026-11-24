@@ -54,6 +54,7 @@ module.exports = {
 
   software: {
     aiToolStack: '/docs/software/ai-tool-stack/overview',
+    neolinker: '/docs/neolinker/overview',
   },
 
   /**
@@ -63,6 +64,7 @@ module.exports = {
   softwareSections: [
     { id: 'neomind', path: '/docs/neomind/product-overview/what-is-neomind' },
     { id: 'aiToolStack', path: '/docs/software/ai-tool-stack/overview' },
+    { id: 'neolinker', path: '/docs/neolinker/overview' },
   ],
 
   useCases: {
@@ -89,6 +91,7 @@ module.exports = {
     visionSolution: '/docs/edge-ai-solutions/vision-scene-understanding/solution-description',
     waterSolution: '/docs/edge-ai-solutions/water-meter-recognition/solution-description',
     aitoolstack: '/docs/software/ai-tool-stack/overview',
+    neolinker: '/docs/neolinker/overview',
     ne503Faq: '/docs/neoeyes-ne503-series/troubleshooting',
     releaseNotes: '/docs/neomind/product-overview/release-notes',
   },

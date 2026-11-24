@@ -47,6 +47,11 @@ import VideoCarousel from '@site/src/components/VideoCarousel';
       <p>安装平台、接入设备、本地识别，并把数据对接到业务系统。</p>
       <span className="step-link">NeoMind 五分钟入门 →</span>
     </a>
+    <a href="/docs/neolinker/quick-start" className="build-step">
+      <h3>设备配网</h3>
+      <p>用 NeoLinker 桌面工具给 NE 系列相机配网：扫码即连、能力驱动表单、回执留痕。</p>
+      <span className="step-link">NeoLinker 快速上手 →</span>
+    </a>
   </div>
 
   {/* ================= Edge AI Solutions ================= */}
@@ -244,6 +249,12 @@ import VideoCarousel from '@site/src/components/VideoCarousel';
       <a href="https://github.com/camthink-ai/NeoMind-Extensions" target="_blank" rel="noopener noreferrer" className="oss-link"><span className="repo">NeoMind-Extensions</span><span className="repo-desc">官方扩展</span></a>
       </div>
     </div>
+    <div className="oss-card">
+      <h3>NeoLinker <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></h3>
+      <div className="oss-links">
+      <a href="https://github.com/camthink-ai/NeoLinker" target="_blank" rel="noopener noreferrer" className="oss-link"><span className="repo">NeoLinker</span><span className="repo-desc">桌面配网工具</span></a>
+      </div>
+    </div>
   </div>
 
   {/* ================= Software Platforms ================= */}
@@ -275,11 +286,29 @@ import VideoCarousel from '@site/src/components/VideoCarousel';
         </div>
       </div>
     </Link>
+    <Link to="/docs/neolinker/overview" className="platform-card">
+      <img src="/img/home/neolinker.png" alt="NeoLinker" />
+      <div>
+        <h3>NeoLinker 配网工具</h3>
+        <p>Windows 桌面工具：BLE / softAP / 局域网三路发现 NE 系列相机，向导式配网并生成可导出的设备回执。</p>
+        <div className="chip-row">
+          <span className="chip">三路发现</span>
+          <span className="chip">能力驱动表单</span>
+          <span className="chip">回执导出</span>
+          <span className="chip">中英双语</span>
+        </div>
+      </div>
+    </Link>
   </div>
 
   {/* ================= Latest Updates ================= */}
   <h2 className="docs-section-title">最新文档</h2>
   <div className="latest-docs-grid">
+    <Link to="/docs/neolinker/overview" className="update-card">
+      <span className="update-badge">NEW</span>
+      <div className="update-title">NeoLinker 设备配网工具</div>
+      <div className="update-meta"><span>软件平台</span></div>
+    </Link>
     <Link to="/docs/edge-ai-solutions/people-counting/solution-description" className="update-card">
       <span className="update-badge">NEW</span>
       <div className="update-title">人数统计解决方案</div>

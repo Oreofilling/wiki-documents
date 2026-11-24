@@ -367,6 +367,9 @@
   "footer.item.neomind": {
     "message": "NeoMind Platform"
   },
+  "footer.item.neolinker": {
+    "message": "NeoLinker Provisioning Tool"
+  },
   "home.meta.description": {
     "message": "From device setup to model deployment, find everything you need to build with CamThink."
   },

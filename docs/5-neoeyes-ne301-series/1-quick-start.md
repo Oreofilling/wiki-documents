@@ -219,6 +219,11 @@ NE301 内置 WiFi AP，提供 Web UI 交互方式，供用户对设备的模型�
 
 应用管理用于配置设备的数据上报通道，支持 **MQTT/MQTTS** 与 **Webhook** 两种方式，通过顶部 Tab 切换。两者可按场景选用：MQTT 适合双向通信（上报 + 远程控制），Webhook 适合轻量单向数据推送。
 
+:::tip 使用 NeoLinker 桌面工具配置通讯模块
+NE301 的通讯模块（Wi-Fi / 蜂窝 / MQTT / Webhook）也可以在 Windows 电脑上用 [NeoLinker](/docs/neolinker/overview) 经 **softAP** 通道完成配置——向导式表单按设备能力生成，并输出可导出的配置回执。
+:::
+
+
 ### 3.1 MQTT/MQTTS
 
 适合需要双向通信的场景（数据上报 + 远程控制下发）。

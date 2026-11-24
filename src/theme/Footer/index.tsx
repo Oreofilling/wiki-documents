@@ -33,6 +33,7 @@ interface FooterColumn {
 /** 「软件平台 / 解决方案」列的条目文案 —— id 对应 siteLinks 的条目 id */
 const ITEM_LABELS: Record<string, React.ReactNode> = {
   neomind: <Translate id="footer.item.neomind">NeoMind 平台</Translate>,
+  neolinker: <Translate id="footer.item.neolinker">NeoLinker 配网工具</Translate>,
   waterMeter: <Translate id="footer.item.waterMeter">水表识别方案</Translate>,
   smartGym: <Translate id="footer.item.smartGym">智慧健身房方案</Translate>,
   visionScene: <Translate id="footer.item.visionScene">视觉大模型场景理解方案</Translate>,

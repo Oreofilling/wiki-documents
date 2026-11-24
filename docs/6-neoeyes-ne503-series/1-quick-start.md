@@ -78,6 +78,11 @@ rtsp://<设备IP>:8554/main
 
 进入 **Settings → Network**，选择 DHCP 或 Static Address。保存后使用新 IP 重新访问设备。
 
+:::tip NeoLinker 桌面工具
+[NeoLinker](/docs/neolinker/overview) 可以在局域网内自动发现 NE503（CT-Disc），并在应用内直接打开设备管理台，无需手输 IP。
+:::
+
+
 <img src="https://resources.camthink.ai/wiki/img/neoeyes-ne503-series/quick-start/qs-settings-network.png" />
 
 进入 **Settings → Time Settings**，选择时区，配置 NTP 后点击 **Sync Now**。

@@ -144,6 +144,11 @@ NE101系统正常启动后，你可以在电脑或手机的WiFi AP列表寻找�
 
 **网络连接**
 >NE101的网络连接设置，根据所选的通讯方案设置内容有所差异，主要有**WiFi、Cat-1、WiFi-Halow**3种通讯方案可设置，下方详细说明这些通讯方案的设置与使用。
+
+:::tip 使用 NeoLinker 桌面工具配网
+除了连接设备自带的 WiFi AP 网页配置，你也可以在 Windows 电脑上使用 [NeoLinker](/docs/neolinker/overview) 通过 **BLE / softAP** 完成同样的网络与通讯配置：支持扫码录入、机型过滤与可导出的配置回执，适合产线批量作业。
+:::
+
 - **WiFi设置**：NE101标准版本自带WiFi，WiFi版本下，可在配置界面中查看当前范围内可检索到的WiFi信号，你可以根据所需连接的WiFi进行选择设置，设备会自动记录WiFi的SSID和密码，如果重复设置NE101连接的WiFi则设备存储的SSID和密码始终是最近一次的。
 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
   <img src="https://resources.camthink.ai/wiki/img/neoeyes-ne101-series/quick-start/ne101_13.png" alt="bracket" style={{ height: '400px', objectFit: 'contain', margin: '0 auto' }} />

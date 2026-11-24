@@ -219,6 +219,11 @@ Model Validation lets you test the deployed model offline — no need to capture
 
 Application Management configures the device's data reporting channel — **MQTT/MQTTS** or **Webhook**, switched via the top tabs. Choose by scenario: MQTT for bidirectional communication (reporting + remote control), Webhook for lightweight one-way data push.
 
+:::tip Configure comm modules with NeoLinker
+NE301's comm modules (Wi-Fi / cellular / MQTT / Webhook) can also be configured on a Windows PC with [NeoLinker](/docs/neolinker/overview) over the **softAP** channel — wizard-style forms generated from device capabilities, with an exportable receipt.
+:::
+
+
 ### 3.1 MQTT/MQTTS
 
 For scenarios that need bidirectional communication (data reporting + remote control commands).

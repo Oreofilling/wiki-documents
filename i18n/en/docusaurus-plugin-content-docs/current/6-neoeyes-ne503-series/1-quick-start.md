@@ -78,6 +78,11 @@ Source, SDK, and build resources are listed in [Resources](./4-application-guide
 
 Open **Settings → Network**, select DHCP or Static Address, and save. Reconnect to the device at its new IP.
 
+:::tip NeoLinker desktop tool
+[NeoLinker](/docs/neolinker/overview) discovers NE503 automatically on the LAN (CT-Disc) and opens the device console inside the app — no IP typing required.
+:::
+
+
 <img src="https://resources.camthink.ai/wiki/img/neoeyes-ne503-series/quick-start/qs-settings-network.png" />
 
 Open **Settings → Time Settings**, select the time zone, configure NTP, and click **Sync Now**.
