@@ -10,7 +10,7 @@ NeoLinker is a **free and open-source** (Apache-2.0) Windows desktop tool for **
 
 It is a **companion tool, not firmware**: put a camera into configuration mode, pick it up in NeoLinker, and let the wizard do the rest. The UI is bilingual (English / 中文) with light and dark themes.
 
-<!-- TODO(screenshot): main / scan page overview shot -->
+<img src="/img/neolinker/placeholders/overview-en.png" alt="NeoLinker main window (placeholder — to be replaced)" />
 
 ## Key Features
 

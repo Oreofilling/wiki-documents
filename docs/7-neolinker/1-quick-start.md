@@ -21,7 +21,7 @@ sidebar_label: "Quick Start"
 
 从 [GitHub Releases](https://github.com/camthink-ai/NeoLinker/releases) 下载最新的 `NeoLinker_v*_windows_x64.zip`，解压到任意目录，双击 `NeoLinker.exe`。无需安装。
 
-<!-- TODO(screenshot): 首次启动进入自检页的截图 -->
+<img src="/img/neolinker/placeholders/selfcheck-zh.png" alt="环境自检页（占位图，待替换为真实截图）" />
 
 ✓ **检查点**：应用打开后显示中文或英文界面（可在右上角切换语言与亮暗主题）。
 
@@ -42,7 +42,7 @@ sidebar_label: "Quick Start"
 - 可按**机型 / 通道**过滤，列表分页；
 - 也可以点**扫码录入**：用摄像头扫描或直接上传设备随附的二维码图片。
 
-<!-- TODO(screenshot): 扫描页设备列表 + 过滤器截图 -->
+<img src="/img/neolinker/placeholders/scan-zh.png" alt="扫描页设备列表与过滤器（占位图，待替换为真实截图）" />
 
 ✓ **检查点**：列表中出现你的 NE101（BLE 通道），信号强度合理。
 
@@ -66,7 +66,7 @@ sidebar_label: "Quick Start"
 
 设备不支持或不适用的配置节不会出现——表单完全由设备上报的能力生成。
 
-<!-- TODO(screenshot): 配置页 Wi-Fi 表单 + payload 预览截图 -->
+<img src="/img/neolinker/placeholders/config-zh.png" alt="配置页 Wi-Fi 表单与 payload 预览（占位图，待替换为真实截图）" />
 
 ✓ **检查点**：Wi-Fi 节表单填写完成，无红色校验错误。
 

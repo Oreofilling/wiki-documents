@@ -11,7 +11,7 @@ NeoLinker 是一款**免费开源**（Apache-2.0）的 Windows 桌面配置工�
 
 它是**配套工具而非固件**：把相机置于配置模式，在 NeoLinker 中选中它，剩下的交给向导。界面中英双语，支持亮 / 暗双主题。
 
-<!-- TODO(screenshot): 首页 / 扫描页整体截图，替换下方示意图位置 -->
+<img src="/img/neolinker/placeholders/overview-zh.png" alt="NeoLinker 主界面（占位图，待替换为真实截图）" />
 
 ## 核心特性
 

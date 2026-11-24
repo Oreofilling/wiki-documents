@@ -47,7 +47,7 @@ Common form behavior:
 - **Payload preview** expands to show the exact JSON that will be delivered;
 - Cancelling keeps the **draft**, so you can come back and continue.
 
-<!-- TODO(screenshot): config page — multi-section form + payload preview -->
+<img src="/img/neolinker/placeholders/config-en.png" alt="Config page — multi-section form + payload preview (placeholder — to be replaced)" />
 
 ## 4. Deliver
 

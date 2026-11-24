@@ -20,7 +20,7 @@ Take one NE101 from configuration mode to a finished receipt over the **BLE chan
 
 Download the latest `NeoLinker_v*_windows_x64.zip` from [GitHub Releases](https://github.com/camthink-ai/NeoLinker/releases), unzip it anywhere, and double-click `NeoLinker.exe`. No installer.
 
-<!-- TODO(screenshot): first launch landing on the self-check page -->
+<img src="/img/neolinker/placeholders/selfcheck-en.png" alt="Self-check page (placeholder — to be replaced)" />
 
 ✓ **Checkpoint**: the app opens in English or 中文 (switch language and light/dark theme in the top-right corner).
 
@@ -41,7 +41,7 @@ On the **scan page** the app scans all three channels (BLE advertisements / soft
 - Filter by **model / channel**; the list is paginated;
 - Or use **QR entry**: scan the code shipped with the device with your camera, or upload a photo of it.
 
-<!-- TODO(screenshot): scan page with device list and filters -->
+<img src="/img/neolinker/placeholders/scan-en.png" alt="Scan page with device list and filters (placeholder — to be replaced)" />
 
 ✓ **Checkpoint**: your NE101 shows up (BLE channel) with a reasonable signal.
 
@@ -65,7 +65,7 @@ On the config page, tick the **Wi-Fi** section:
 
 Sections the device does not support simply do not appear — forms are generated entirely from the device's capability report.
 
-<!-- TODO(screenshot): config page Wi-Fi form + payload preview -->
+<img src="/img/neolinker/placeholders/config-en.png" alt="Config page Wi-Fi form + payload preview (placeholder — to be replaced)" />
 
 ✓ **Checkpoint**: the Wi-Fi form is complete with no red validation errors.
 

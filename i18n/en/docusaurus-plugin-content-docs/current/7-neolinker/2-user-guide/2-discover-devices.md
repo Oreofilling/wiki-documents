@@ -43,7 +43,7 @@ Once an NE503 is on the network, it multicasts `ct-announce` (serial number, IP,
 - **Model / channel filters**: narrow the list from the top of the page — on a production line, show only the target model;
 - **QR entry**: open the QR entry point and scan the code shipped with the device using the PC camera, or upload a photo of the code, to jump straight to that device.
 
-<!-- TODO(screenshot): scan page — filters + device list across the three channels -->
+<img src="/img/neolinker/placeholders/scan-en.png" alt="Scan page — filters + device list (placeholder — to be replaced)" />
 
 ## Embedded NE503 console
 

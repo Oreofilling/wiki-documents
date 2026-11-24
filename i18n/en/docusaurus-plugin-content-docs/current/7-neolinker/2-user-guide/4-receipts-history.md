@@ -16,7 +16,7 @@ After a successful delivery, the result page shows the session's **plain-text re
 - The config sections written in this session;
 - Per-section applied-at times and stored counts.
 
-<!-- TODO(screenshot): result page receipt card -->
+<img src="/img/neolinker/placeholders/receipt-en.png" alt="Result page receipt card (placeholder — to be replaced)" />
 
 The receipt can be **exported** directly for archiving — a plain-text format that is easy to file with work orders or keep for audit trails.
 

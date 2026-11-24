@@ -48,7 +48,7 @@ CT-Prov/1 定义了七类配置节。设备实际出现哪些，取决于机型�
 - **payload 预览**可展开，核对即将下发的 JSON 原文；
 - 取消离开时**草稿保留**，回来接着填。
 
-<!-- TODO(screenshot): 配置页——多配置节表单 + payload 预览截图 -->
+<img src="/img/neolinker/placeholders/config-zh.png" alt="配置页——多配置节表单与 payload 预览（占位图，待替换为真实截图）" />
 
 ## 4. 交付
 
