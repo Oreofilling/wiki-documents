@@ -11,7 +11,7 @@ Take one NE101 from configuration mode to a finished receipt over the **BLE chan
 
 **Prerequisites**:
 
-- A Windows 10/11 x64 PC with a Bluetooth adapter (required for BLE)
+- A Windows 10/11 x64 PC with a Bluetooth adapter (required for BLE); macOS is experimental — see [Install & Setup](./2-user-guide/1-install-setup.md)
 - One NE101 camera in configuration mode (see the material shipped with the device)
 - A Wi-Fi router (the camera and the PC do not need to be on the same network; if the device only supports the 2.4 GHz band, follow its manual)
 
@@ -25,7 +25,7 @@ Download the latest `NeoLinker_v*_windows_x64.zip` from [GitHub Releases](https:
 
 ✓ **Checkpoint**: the app opens in English or 中文 (switch language and light/dark theme in the top-right corner).
 
-:::tip WebView2
+:::tip WebView2 (Windows only)
 If the app or the NE503 management page complains about a missing WebView2, install the [WebView2 Evergreen runtime](https://developer.microsoft.com/microsoft-edge/webview2/) and retry.
 :::
 
@@ -51,7 +51,7 @@ On the **scan page** the app scans all three channels (BLE advertisements / soft
 ✓ **Checkpoint**: your NE101 shows up (BLE channel) with a reasonable signal.
 
 :::tip Nothing appears
-Confirm the device is really in configuration mode (within ~60 s of power-on, LED flashing blue) and not too far away; the device auto-sleeps after ~1 minute of inactivity — press the config button to wake it and retry. See [Discover Devices](./2-user-guide/2-discover-devices.md).
+For NE101: confirm the device is in configuration mode (within ~60 s of power-on, LED flashing blue) and not too far away; the device auto-sleeps after ~1 minute of inactivity — press the config button to wake it and retry. How other models enter configuration mode is covered in [Discover Devices](./2-user-guide/2-discover-devices.md).
 :::
 
 ## 4. Connect
@@ -85,20 +85,20 @@ Click **Deliver**. The device writes and persists the configuration; on success 
 ✓ **Checkpoint**: the result page shows a successful delivery whose receipt matches what you entered.
 
 :::note Delivered ≠ online
-A successful delivery means the configuration is persisted on the device. The device then connects to Wi-Fi on its own; the runtime outcome is surfaced by device logs or the platform side, outside this tool's feedback scope.
+A successful delivery means the configuration is persisted on the device. The device then connects to Wi-Fi on its own; the runtime outcome is surfaced by device logs or the platform side, outside this tool's feedback scope. The exception is the EK410 softAP channel — see [Provision a Device](./2-user-guide/3-provision-device.md).
 :::
 
 ## 7. Wrap up
 
 - Click **Configure next device** to return to the scan page (production-line loop);
 - Or open the **History** page to browse / export past sessions;
-- NE503 users: after LAN discovery, the device's management page opens inside the app (WebView2).
+- NE503 users: after LAN discovery, the device's management page opens inside the app.
 
 ---
 
 ## Next steps
 
-- [Install & Setup](./2-user-guide/1-install-setup.md) — WebView2, Bluetooth adapter, and other runtime details
-- [Discover Devices](./2-user-guide/2-discover-devices.md) — three channels, filters, and QR entry
-- [Provision a Device](./2-user-guide/3-provision-device.md) — the seven config sections and delivery semantics
+- [Install & Setup](./2-user-guide/1-install-setup.md) — WebView2, the Bluetooth adapter, experimental macOS support, and other runtime details
+- [Discover Devices](./2-user-guide/2-discover-devices.md) — the three channels, how each model enters configuration mode, filters, and QR entry
+- [Provision a Device](./2-user-guide/3-provision-device.md) — the seven config sections, delivery semantics, and per-model differences
 - [Receipts & History](./2-user-guide/4-receipts-history.md) — receipt export and the production-line loop

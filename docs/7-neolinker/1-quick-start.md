@@ -11,7 +11,7 @@ sidebar_label: "Quick Start"
 
 **前置条件**：
 
-- Windows 10/11 x64 电脑，带蓝牙适配器（BLE 通道必需）
+- Windows 10/11 x64 电脑，带蓝牙适配器（BLE 通道必需）；macOS 为实验性支持，见[安装与环境](./2-user-guide/1-install-setup.md)
 - 一台 NE101 相机，已置于配置模式（进入方式见设备随附说明）
 - 一台 Wi-Fi 路由器（相机与电脑不必同网；若设备仅支持 2.4 GHz 频段，以设备手册为准）
 
@@ -25,7 +25,7 @@ sidebar_label: "Quick Start"
 
 ✓ **检查点**：应用打开后显示中文或英文界面（可在右上角切换语言与亮暗主题）。
 
-:::tip WebView2
+:::tip WebView2（仅 Windows）
 若启动或打开 NE503 管理页时提示缺少 WebView2，安装 [WebView2 Evergreen 运行时](https://developer.microsoft.com/microsoft-edge/webview2/) 后重试。
 :::
 
@@ -51,7 +51,7 @@ sidebar_label: "Quick Start"
 ✓ **检查点**：列表中出现你的 NE101（BLE 通道），信号强度合理。
 
 :::tip 扫不到设备
-确认设备处于配置模式（上电后 60 秒内，指示灯蓝色快闪）且与电脑距离不要太远；约 1 分钟无操作设备会自动休眠，短按配置键唤醒后重试。详见 [发现设备](./2-user-guide/2-discover-devices.md)。
+以 NE101 为例：确认设备处于配置模式（上电后 60 秒内，指示灯蓝色快闪）且与电脑距离不要太远；约 1 分钟无操作设备会自动休眠，短按配置键唤醒后重试。其他机型进入配置模式的方式见 [发现设备](./2-user-guide/2-discover-devices.md)。
 :::
 
 ## 4. 连接设备
@@ -85,20 +85,20 @@ sidebar_label: "Quick Start"
 ✓ **检查点**：结果页显示交付成功、回执内容与你填写的一致。
 
 :::note 下发成功 ≠ 联网成功
-下发成功表示配置已写入设备存储；设备随后自行连接 Wi-Fi，联网结果由设备侧日志或平台侧呈现，不在本工具的反馈范围内。
+下发成功表示配置已写入设备存储；设备随后自行连接 Wi-Fi，联网结果由设备侧日志或平台侧呈现，不在本工具的反馈范围内。例外是 EK410 的 softAP 通道，见[配置设备](./2-user-guide/3-provision-device.md)。
 :::
 
 ## 7. 收尾
 
 - 点**配置下一台设备**回到扫描页，进入下一台（产线式循环）；
 - 或到**历史**页查看 / 导出过往会话；
-- NE503 用户：设备经局域网发现后，可在应用内直接打开其管理页（WebView2 内嵌）。
+- NE503 用户：设备经局域网发现后，可在应用内直接打开其管理页。
 
 ---
 
 ## 下一步
 
-- [安装与环境](./2-user-guide/1-install-setup.md)——WebView2、蓝牙适配器等运行细节
-- [发现设备](./2-user-guide/2-discover-devices.md)——三路通道、过滤与扫码录入
-- [配置设备](./2-user-guide/3-provision-device.md)——七类配置节与交付语义
+- [安装与环境](./2-user-guide/1-install-setup.md)——WebView2、蓝牙适配器、macOS 实验性支持等运行细节
+- [发现设备](./2-user-guide/2-discover-devices.md)——三路通道、各机型进入配置模式的方式、过滤与扫码录入
+- [配置设备](./2-user-guide/3-provision-device.md)——七类配置节、交付语义与各机型差异
 - [回执与历史](./2-user-guide/4-receipts-history.md)——回执导出与产线循环

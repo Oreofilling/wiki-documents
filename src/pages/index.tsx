@@ -275,7 +275,7 @@ export default function Home(): JSX.Element {
                             <div>
                                 <h2>NeoLinker</h2>
                                 <p>
-                                    <Translate id="home.software.neolinker.desc">NE 系列相机配网工具：三路发现、向导式配置、回执留痕。</Translate>
+                                    <Translate id="home.software.neolinker.desc">CamThink 设备配网工具：三路发现、向导式配置、回执留痕。</Translate>
                                 </p>
                                 <Link to={LINKS.software.neolinker}>
                                     <Translate id="home.software.viewDocs">查看文档</Translate>

@@ -425,7 +425,7 @@
     "message": "Train, optimize, and deploy models to your edge devices."
   },
   "home.software.neolinker.desc": {
-    "message": "Provisioning tool for NE-series cameras: multi-channel discovery, wizard-style configuration, per-device receipts."
+    "message": "Provisioning tool for CamThink devices: multi-channel discovery, wizard-style configuration, per-device receipts."
   },
   "home.tasks.title": {
     "message": "What do you want to build?"

@@ -1,5 +1,5 @@
 ---
-description: NeoLinker 配置会话详解：连接与配对、能力读取、七类配置节表单（Wi-Fi / 蜂窝 / HaLow / 以太网 / comm / MQTT / Webhook）、payload 预览、交付语义与错误码、断链重连。
+description: NeoLinker 配置会话详解：连接与配对、能力读取、七类配置节表单（Wi-Fi / 蜂窝 / HaLow / 以太网 / comm / MQTT / Webhook）、payload 预览、交付语义与各机型差异、错误码、断链重连。
 keywords: [NeoLinker, 配置会话, CT-Prov, 配置节, MQTT, Webhook, Wi-Fi 配置, 错误码]
 tags: [NeoLinker, 设备配置]
 sidebar_label: "Provision a Device"
@@ -19,7 +19,7 @@ flowchart LR
 ## 1. 连接与配对
 
 - **BLE 通道**：使用加密链路。Windows 弹出蓝牙配对提示时确认即可——配对建立的绑定关系是链路加密的基础；
-- **softAP 通道**：应用自动连接设备热点（当前 NE101 热点名多为 `<机型>_<地址后缀>`，如 `NE101-P_BBC6DC`）；
+- **softAP 通道**：应用自动连接设备热点（热点名为 `<机型>_<地址后缀>`，如 `NE101-P_BBC6DC`、`EK410_A1B2C3`；EK410 的热点带密码，应用会自动处理）；
 - **LAN 通道（NE503）**：同网段即可直连。
 
 连接建立后，应用先读取**设备信息**（机型、序列号等），再读取**能力声明**。
@@ -34,12 +34,12 @@ CT-Prov/1 定义了七类配置节。设备实际出现哪些，取决于机型�
 
 | 配置节 | 用途 | 常见机型 |
 | ---- | ---- | ---- |
-| `wifi` | Wi-Fi 接入：SSID、密码（可触发设备端扫描选网） | NE101 / NE301 |
+| `wifi` | Wi-Fi 接入：SSID、密码（可触发设备端扫描选网） | NE101 / NE301 / EK410 |
 | `cellular` | 蜂窝（CAT1）拨号：APN 等 | NE101 / NE301 |
 | `halow` | Wi-Fi HaLow 低功耗长距接入 | 按模块 |
 | `ethernet` | 以太网 / PoE：无字段可配，插入即用（DHCP），仅只读展示 | 按机型 |
 | `comm` | 网络选择器：指定优先使用哪个上网通道 | 仅 NE301（NE101 由固件探测自动决定，不出现此节） |
-| `mqtt` | MQTT 服务：broker 地址、端口、主题等 | NE101 / NE301 |
+| `mqtt` | MQTT 服务：broker 地址、端口、主题等 | NE101 / NE301 / EK410 |
 | `webhook` | Webhook 推送：URL、事件等 | NE101 / NE301 |
 
 填写时的通用行为：
@@ -58,6 +58,17 @@ CT-Prov/1 定义了七类配置节。设备实际出现哪些，取决于机型�
 - **成功即已持久化**——设备返回成功表示配置已写入非易失存储，重启不丢；
 - **不验证联网**——工具不替你确认设备能否真的连上 Wi-Fi / broker；运行时结果由设备日志、设备本地页面或平台侧呈现。
 
+### EK410 的差异
+
+EK410 固件（1.3.10）的保存行为与上面有两处不同：
+
+- **softAP 通道会先试连再保存**：设备先用约 20 秒尝试连接目标 Wi-Fi，成功才写入存储。Wi-Fi 密码错误时，下发直接报 `STORAGE_FAILED`，详情为 `wifi associate failed`——这时按"密码有误"处理，而不是存储故障。BLE 通道仍是先保存、再尽力连接。
+- **Wi-Fi 与 MQTT 不是原子保存**：同一次下发里 Wi-Fi 保存成功而 MQTT 失败时，Wi-Fi 配置已经写入设备。
+
+另外，经 BLE 通道成功下发 Wi-Fi 配置后，EK410 会在约 1.2 秒后自动关闭配网窗口，属正常现象。
+
+以上行为读自 EK410 固件源码，尚未用 NeoLinker 真机验证。
+
 ### 常见错误码
 
 | 错误码 | 含义 | 常见处理 |
@@ -66,7 +77,7 @@ CT-Prov/1 定义了七类配置节。设备实际出现哪些，取决于机型�
 | `SECTION_NOT_SUPPORTED` | 配置节不受支持或不可配置 | 该机型不含此模块——去掉此节再下发 |
 | `FIELD_NOT_SUPPORTED` | 含能力声明之外的字段 | 刷新能力后按新表单填写 |
 | `BUSY` | 设备正在服务其他连接或扫描 | 等待片刻重试，或确认没有别的主机在配置它 |
-| `STORAGE_FAILED` | 配置持久化失败 | 重试；反复出现则检查设备存储状态 |
+| `STORAGE_FAILED` | 配置持久化失败；EK410 走 softAP 通道时多为 Wi-Fi 关联失败（如密码错误） | 看错误详情：`wifi associate failed` 则核对 Wi-Fi 密码；否则重试，反复出现则检查设备存储状态 |
 | `INVALID_MESSAGE` / `UNSUPPORTED_VERSION` / `UNSUPPORTED_OPERATION` / `INTERNAL_ERROR` | 消息 / 版本 / 操作不兼容或设备内部错误 | 升级设备固件与应用版本后重试 |
 
 ## 5. 断链与重连
