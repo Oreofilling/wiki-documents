@@ -6,6 +6,17 @@ All notable changes to the CamThink Wiki documentation will be documented in thi
 
 > This changelog reflects updates starting from **2025-12-23**. Major changes prior to this date are not recorded.
 
+## [2026-11-27]
+
+### Added
+- **NeoLinker provisioning tool docs (new section)**: New `NeoLinker` category under Software Platform (`docs/10-neolinker/`, zh + en), 7 pages: overview (positioning, how it works, model support, system requirements), Quick Start, Install & Setup, Discover Devices, Provision a Device, Receipts & History, and Troubleshooting, plus links to the CT-Prov / CT-Disc protocol specs. Screenshots are placeholders for now.
+
+### Changed
+- **NeoLinker entry points wiki-wide**: Added NeoLinker to the docs-home "Latest Docs" cards, the landing page's software card and latest-docs strip, the Footer software column, and the "Software Platform" sidebar group; all paths come from `siteLinks.cjs`.
+- **NeoLinker tips in the NE101 / NE301 / NE503 / EK410 quick starts**: Linked to the NeoLinker docs at the provisioning step (zh + en).
+- **NeoLinker wording corrected in the EK410 docs**: NeoLinker is a Windows / macOS desktop tool, not a mobile app, and can provision the EK410 over SoftAP as well as BLE (not yet verified on hardware); links now point to the NeoLinker docs page (zh + en).
+- **NeoLinker docs cover EK410 and macOS**: EK410 (firmware 1.3.10) added to the model, channel and address tables, with its softAP try-connect-before-save and non-atomic Wi-Fi / MQTT behaviour; new macOS (experimental) section and matching troubleshooting entries; noted that the released v0.3.0 and earlier are Windows-only with NE101 / NE301 / NE503 (zh + en).
+
 ## [2026-11-24]
 
 ### Changed

@@ -6,6 +6,17 @@
 
 > 本更新日志自 **2025-12-23** 起开始记录，此前的历史变更未作追溯。
 
+## [2026-11-27]
+
+### 新增
+- **NeoLinker 配网工具文档（新小节）**：软件平台分类新增 `NeoLinker`（`docs/10-neolinker/`，中英文），共 7 页：概述（定位、工作原理、机型支持、系统要求）、五分钟上手、安装与环境、发现设备、配置设备、回执与历史、故障排除，并附 CT-Prov / CT-Disc 协议规范入口。截图暂为占位图，后续替换。
+
+### 变更
+- **NeoLinker 全站入口**：文档首页「最新文档」卡片、落地页软件卡片与最新文档区、Footer 软件平台列、侧栏「Software Platform」分组均新增 NeoLinker 入口，路径统一取自 `siteLinks.cjs`。
+- **NE101 / NE301 / NE503 / EK410 快速上手补充 NeoLinker 提示**：在配网步骤处链接到 NeoLinker 文档（中英文）。
+- **EK410 文档中的 NeoLinker 描述更正**：NeoLinker 是 Windows / macOS 桌面工具而非手机 App，BLE 与 SoftAP 两路均可用于 EK410（尚未真机验证）；链接改指向 NeoLinker 文档页（中英文）。
+- **NeoLinker 文档补 EK410 与 macOS**：机型表、通道表、地址表加入 EK410（固件 1.3.10），并说明其 softAP 先试连后保存、Wi-Fi / MQTT 非原子保存等差异；新增 macOS（实验性）小节与对应的故障排除条目；注明已发布的 v0.3.0 及更早版本仅支持 Windows 与 NE101 / NE301 / NE503（中英文）。
+
 ## [2026-11-24]
 
 ### 变更
