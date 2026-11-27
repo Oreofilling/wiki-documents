@@ -15,7 +15,7 @@ tags: [EK410, quick start, provisioning]
 
 This page walks you from **unboxing to the first image on the panel**. Each step says which key to press, which button to click, and what “success” looks like. Field tables and deep troubleshooting live in the user guide.
 
-You can also use the mobile app [NeoLinker](https://github.com/camthink-ai/NeoLinker) over BLE (long-press **PAGE**); advertise name **`EK410-XXXXXX`** (hyphen). See [Provisioning and connectivity](./2-user-guide/0-softap-provisioning.md).
+You can also use the desktop tool [NeoLinker](/docs/neolinker/overview): long-press **PAGE** for BLE (advertise name **`EK410-XXXXXX`**, hyphen), or long-press **MAIN** to open SoftAP and let NeoLinker join the device hotspot automatically. See [Provisioning and connectivity](./2-user-guide/0-softap-provisioning.md).
 
 Screenshots show the Web console in **English** (switch language on the System page if you prefer Chinese). Opening `http://192.168.4.1` on SoftAP and the STA IP after Wi‑Fi join is the same UI.
 

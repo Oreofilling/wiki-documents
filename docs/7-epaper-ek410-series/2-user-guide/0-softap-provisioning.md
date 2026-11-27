@@ -11,7 +11,7 @@ tags: [EK410, 用户指南, 配网]
 
 本页按「你要点哪里、每个字段做什么」说明配网与联网。首次走 SoftAP 的完整路径见[快速入门](../1-quick-start.md)。
 
-SoftAP（网页）与 BLE（NeoLinker）**同一固件、运行时互斥**：开一个会关另一个。
+SoftAP 与 BLE 配网窗口**同一固件、运行时互斥**：开一个会关另一个。SoftAP 可以用手机 / 电脑的浏览器配置，也可以用电脑端工具 [NeoLinker](/docs/neolinker/overview) 配置；BLE 通道供 NeoLinker 使用。
 
 ## 操作入口：网络页
 
@@ -68,17 +68,21 @@ SoftAP（网页）与 BLE（NeoLinker）**同一固件、运行时互斥**：开
 
 ## BLE CT-Prov（NeoLinker）
 
-适合不想连 SoftAP、用手机 App 配网的场景。
+适合用电脑上的 NeoLinker 配置、不想手动连热点的场景。NeoLinker 是 Windows / macOS 桌面工具（macOS 为实验性支持）。
 
 | 步骤 | 操作 |
 | :--- | :--- |
 | 1 | **长按 PAGE 约 2.5 秒**（或网络页 → **开启 BLE（NeoLink）**） |
 | 2 | 状态灯变为**青色闪烁**；SoftAP / 网页服务会停掉 |
-| 3 | 打开 [NeoLinker](https://github.com/camthink-ai/NeoLinker)，在扫描列表中找广播名 **`EK410-XXXXXX`**（**连字符** `-`，后缀同 SoftAP MAC 末 3 字节；注意不是热点名里的下划线 `_`） |
-| 4 | 按 App 提示完成 CT-Prov/1 绑定 |
+| 3 | 打开电脑上的 [NeoLinker](/docs/neolinker/overview)，在扫描列表中找广播名 **`EK410-XXXXXX`**（**连字符** `-`，后缀同 SoftAP MAC 末 3 字节；注意不是热点名里的下划线 `_`） |
+| 4 | 按 NeoLinker 提示完成 CT-Prov/1 配置 |
 | 5 | 退出：再长按 PAGE、空闲约 2 分钟、`session.close`，或长按 MAIN 切回 SoftAP |
 
 `openBleProv` 可带 `{idleSec}`（CI 用）。最长窗口与 SoftAP 一样约 15 分钟。协议细节见固件仓 [`docs/ct_prov.md`](https://github.com/camthink-ai/EK410/blob/main/docs/ct_prov.md)；HTTP 侧也可对 `POST /api/v1/ctprov` 发 JSON 信封（STA IP 同样可达）。
+
+:::tip 用 NeoLinker 走 SoftAP
+长按 MAIN 开启 SoftAP 后，NeoLinker 也能自动连接 `EK410_<MAC6>` 热点完成同样的 Wi-Fi / MQTT 配置，无需手动输入热点密码。NeoLinker 对 EK410 的支持（BLE 与 SoftAP 两路）尚未真机验证，详见 [NeoLinker 文档](/docs/neolinker/overview)。
+:::
 
 ---
 
@@ -165,6 +169,7 @@ SoftAP（网页）与 BLE（NeoLinker）**同一固件、运行时互斥**：开
 ## 相关资料
 
 - [快速入门](../1-quick-start.md)
+- [NeoLinker 桌面配网工具](/docs/neolinker/overview)
 - [HTTP API](../4-software-guide/1-http-api.md)
 - [MQTT 协议](../4-software-guide/2-mqtt-protocol.md)
 - [系统维护](./3-system-maintenance.md)（恢复出厂后需重新配网）

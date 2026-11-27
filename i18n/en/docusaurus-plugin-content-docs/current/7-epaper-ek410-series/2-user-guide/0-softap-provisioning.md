@@ -11,7 +11,7 @@ tags: [EK410, user guide, provisioning]
 
 This page explains what to click and what each field does. The full SoftAP path for first setup is in [Quick start](../1-quick-start.md).
 
-SoftAP (web) and BLE (NeoLinker) are **one firmware, mutually exclusive at runtime**: starting one stops the other.
+The SoftAP and BLE provisioning windows are **one firmware, mutually exclusive at runtime**: starting one stops the other. SoftAP can be configured from a phone or computer browser, or with the desktop tool [NeoLinker](/docs/neolinker/overview); the BLE channel is used by NeoLinker.
 
 ## Entry: Network page
 
@@ -68,17 +68,21 @@ While provisioning the device is **APSTA**: hotspot and home Wi‑Fi can coexist
 
 ## BLE CT-Prov (NeoLinker)
 
-For provisioning without joining SoftAP, using the mobile app.
+For provisioning with NeoLinker on a computer, without manually joining the hotspot. NeoLinker is a Windows / macOS desktop tool (macOS support is experimental).
 
 | Step | Action |
 | :--- | :--- |
 | 1 | **Long-press PAGE ~2.5 s** (or **Network** → **Open BLE (NeoLink)**) |
 | 2 | LED **cyan blink**; SoftAP / web server stops |
-| 3 | Open [NeoLinker](https://github.com/camthink-ai/NeoLinker); look for advertise name **`EK410-XXXXXX`** (**hyphen** `-`, SoftAP MAC last 3 bytes — not the underscore SoftAP SSID) |
-| 4 | Complete CT-Prov/1 per app |
+| 3 | Open [NeoLinker](/docs/neolinker/overview) on your computer; look for advertise name **`EK410-XXXXXX`** (**hyphen** `-`, SoftAP MAC last 3 bytes — not the underscore SoftAP SSID) |
+| 4 | Complete the CT-Prov/1 configuration as NeoLinker prompts |
 | 5 | Exit: long-press PAGE again, ~2 min idle, `session.close`, or long-press MAIN for SoftAP |
 
 `openBleProv` may pass `{idleSec}` (CI). Max window same as SoftAP, ~15 minutes. Protocol: [`docs/ct_prov.md`](https://github.com/camthink-ai/EK410/blob/main/docs/ct_prov.md); HTTP can POST JSON to `/api/v1/ctprov` on STA IP too.
+
+:::tip Using NeoLinker over SoftAP
+After long-pressing MAIN to open SoftAP, NeoLinker can also join the `EK410_<MAC6>` hotspot automatically and apply the same Wi-Fi / MQTT configuration, so there is no need to type the hotspot password. NeoLinker's EK410 support (BLE and SoftAP) has not been verified on real hardware yet. See the [NeoLinker docs](/docs/neolinker/overview).
+:::
 
 ---
 
@@ -165,6 +169,7 @@ Command/report formats: [MQTT protocol](../4-software-guide/2-mqtt-protocol.md).
 ## Related
 
 - [Quick start](../1-quick-start.md)
+- [NeoLinker provisioning tool](/docs/neolinker/overview)
 - [HTTP API](../4-software-guide/1-http-api.md)
 - [MQTT protocol](../4-software-guide/2-mqtt-protocol.md)
 - [System maintenance](./3-system-maintenance.md) (factory reset requires re-provision)

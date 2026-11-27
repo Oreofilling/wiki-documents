@@ -15,7 +15,7 @@ tags: [EK410, 快速入门, 配网]
 
 本页按**第一次开箱到屏幕上出现你的第一张图**写操作步骤。每一步都写清：按哪个键、点哪个按钮、成功时长什么样。字段细表与排障见用户指南。
 
-也可用手机 App [NeoLinker](https://github.com/camthink-ai/NeoLinker) 走 BLE（长按 **PAGE**），广播名 **`EK410-XXXXXX`**（连字符）；见[配网与连接](./2-user-guide/0-softap-provisioning.md)。
+也可用电脑端配网工具 [NeoLinker](/docs/neolinker/overview)：长按 **PAGE** 走 BLE，广播名 **`EK410-XXXXXX`**（连字符）；或长按 **MAIN** 开启 SoftAP 后由 NeoLinker 自动连接设备热点。详见[配网与连接](./2-user-guide/0-softap-provisioning.md)。
 
 下文截图为 Web 控制台**英文界面**（系统页可将语言切到中文）。SoftAP 下打开 `http://192.168.4.1`，与入网后用 STA IP 打开，是同一套页面。
 
